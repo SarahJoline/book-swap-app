@@ -1,13 +1,12 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "Charlotte1904",
     "database": "database_development",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": 0
   },
-
   "production": {
     "username": "root",
     "password": null,
