@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS bookswap_db;
+CREATE DATABASE bookswap_db;
