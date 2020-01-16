@@ -6,6 +6,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static("./client"))
 
+
 const apiRoutes = require("./routes/api/apiRoutes")
 app.use("/", apiRoutes)
 
