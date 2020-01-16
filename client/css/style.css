@@ -1,5 +1,22 @@
+body {
+    background: url(../images/starfield.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
 .container {
-    background-color: purple;
     position: relative;
-    top: -800px
+    top: 7vh;
+    width: 70%;
+}
+
+.jumbotron {
+    height: 450px;
+    opacity: 0.75;
+    text-shadow: 1px 1px black;
+    color: black;
+}
+
+.input-group {
+    width: 50%;
+    text-align: center;
 }
