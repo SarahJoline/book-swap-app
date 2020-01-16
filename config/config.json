@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Saigon26",
+    "password": "Charlotte1904",
     "database": "bookswap_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
