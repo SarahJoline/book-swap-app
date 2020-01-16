@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const books = require("../models/books");
+const books = require("../../models/books");
 
 router.get("/", (req, res) => {
   books.findAll().then(allBooks => {
