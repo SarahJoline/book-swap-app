@@ -1,15 +1,32 @@
 const express = require("express");
 const router = express.Router();
-const books = require("../../models/books");
+
+const Books = require("../../models/books");
 
 router.get("/", (req, res) => {
-  books.findAll().then(allBooks => {
+  Books.findAll().then(allBooks => {
     res.json(allBooks);
   });
 });
 
-// router.get("/", (req, res) => {
-//   console.log("Our server was hit");
-// });
+router.get("/:author", (req, res) => {
+  Books.findAll({
+    where: {
+      author: req.params.author
+    }
+  }).then(results => {
+    res.send(results);
+  });
+});
+
+router.get("/:title", (req, res) => {
+  Books.findAll({
+    where: {
+      title: req.params.title
+    }
+  }).then(results => {
+    res.send(results);
+  });
+});
 
 module.exports = router;
