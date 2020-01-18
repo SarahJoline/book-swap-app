@@ -18,41 +18,10 @@ const User = sequelize.define("user", {
   }
 });
 
-const WantedBooks = sequelize.define("wanted_book", {
-  title: {
-    type: Sequelize.STRING,
-    validate: {
-      len: [1, 100]
-    }
-  },
-  author: {
-    type: Sequelize.STRING,
-    validate: {
-      len: [1, 100]
-    }
-  }
-});
-
-const BooksToLend = sequelize.define("books_I_have", {
-  title: {
-    type: Sequelize.STRING,
-    validate: {
-      len: [1, 100]
-    }
-  },
-  author: {
-    type: Sequelize.STRING,
-    validate: {
-      len: [1, 100]
-    }
-  },
-  available: { type: Sequelize.BOOLEAN, defaultValue: true }
-});
-
 const Profile = sequelize.define("profile", {
   photo: {
     allowNull: false,
-    type: Sequelize.BLOB
+    type: Sequelize.STRING
   },
 
   firstName: {
@@ -71,7 +40,43 @@ const Profile = sequelize.define("profile", {
     }
   },
 
+  location: {
+    allowNull: false,
+    type: Sequelize.STRING
+  },
+
   rating: Sequelize.INTEGER
+});
+
+const BooksToLend = sequelize.define("books_I_have", {
+  title: {
+    type: Sequelize.STRING,
+    validate: {
+      len: [1, 100]
+    }
+  },
+  author: {
+    type: Sequelize.STRING,
+    validate: {
+      len: [1, 100]
+    }
+  },
+  available: { type: Sequelize.BOOLEAN, defaultValue: true }
+});
+
+const WantedBooks = sequelize.define("wanted_book", {
+  title: {
+    type: Sequelize.STRING,
+    validate: {
+      len: [1, 100]
+    }
+  },
+  author: {
+    type: Sequelize.STRING,
+    validate: {
+      len: [1, 100]
+    }
+  }
 });
 
 User.hasOne(Profile);
