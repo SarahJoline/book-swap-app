@@ -1,22 +1,38 @@
 body {
-    background: url(../images/starfield.jpg) no-repeat center center fixed;
+    background: url(../images/star.jpg) no-repeat center center fixed;
     background-size: cover;
+    font-family: 'Special Elite', cursive;
 }
 
 .container {
     position: relative;
-    top: 7vh;
+    top: 28vh;
     width: 70%;
+    height: 175px;
 }
 
 .jumbotron {
     height: 450px;
-    opacity: 0.75;
     text-shadow: 1px 1px black;
     color: black;
+    background: cornsilk;
+    height: 150%;
 }
 
 .input-group {
-    width: 50%;
+    width: 70%;
+    margin-left: 15%;
     text-align: center;
 }
+
+.display-4 {
+    text-align: center;
+}
+
+#input-group2 {
+    border-color: black;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: black;
+  }
