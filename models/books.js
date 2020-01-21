@@ -2,6 +2,12 @@ const Sequelize = require("sequelize");
 const sequelize = require("../config/connection");
 
 const User = sequelize.define("user", {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    allowNull: false
+  },
   email: {
     type: Sequelize.STRING,
     allowNull: false,
