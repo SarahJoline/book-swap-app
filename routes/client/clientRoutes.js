@@ -12,9 +12,9 @@ router.get("/user/new", (req, res) => {
   res.sendFile(path.join(__dirname, "../../client/sign-up.html")); // insert html path
 });
 
-router.get("/profile/new", (req, res) => {
+router.get("/user/profile", (req, res) => {
   // ^^ insert file location
-  res.sendFile(path.join(__dirname, "../../client/profile-set-up.html")); // insert html path
+  res.sendFile(path.join(__dirname, "../../client/profile.html")); // insert html path
 });
 
 module.exports = router;

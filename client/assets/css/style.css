@@ -29,10 +29,10 @@ body {
     text-align: center;
 }
 
-#input-group2 {
+.input-group2 {
     border-color: black;
 }
 
 .form-control::-webkit-input-placeholder {
     color: black;
-  }
+}
