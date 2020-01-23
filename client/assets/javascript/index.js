@@ -35,7 +35,7 @@ $('document').ready(function () {
 
     $("#submitButton").on("click", function (e) {
         e.preventDefault();
-        let city = $("#city").val();
+        let city = $("#input-group2").val();
         $("#city").val('');
         // let startDate = $("#start-datepicker").val().toString();
         // let endDate = $("#end-datepicker").val().toString();
