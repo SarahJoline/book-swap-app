@@ -44,8 +44,9 @@ router.post("/profile/new", (req, res) => {
     lastName: req.body.lastName,
     location: req.body.location,
     rating: req.bosy.rating
-  }).then(results => {
-    console.log(results);
+  }).then(data => {
+    console.log(data);
+    res.redirect("/");
   });
 });
 

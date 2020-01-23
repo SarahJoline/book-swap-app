@@ -17,4 +17,9 @@ router.get("/profile/new", (req, res) => {
   res.sendFile(path.join(__dirname, "../../client/profile-set-up.html")); // insert html path
 });
 
+router.get("/booklists", (req, res) => {
+  // ^^ insert file location
+  res.sendFile(path.join(__dirname, "../../client/booklist.html")); // insert html path
+});
+
 module.exports = router;
