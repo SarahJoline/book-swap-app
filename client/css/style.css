@@ -37,6 +37,11 @@ body {
     color: black;
 }
 
+.open-button {
+    background-color: cornsilk;
+    margin-top: 1vh;
+    margin-left: 80%;
+}
 /* .navbar {
     background-color: cornsilk;
     height: 9vh;
