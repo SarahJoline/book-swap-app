@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("bookswap_db", "root", "Charlotte1904", {
+const sequelize = new Sequelize("bookswap_db", "root", "password", {
   host: "localhost",
   port: 3306,
   dialect: "mysql",
@@ -10,6 +10,5 @@ const sequelize = new Sequelize("bookswap_db", "root", "Charlotte1904", {
     idle: 10000
   }
 });
-
 
 module.exports = sequelize;
