@@ -24,10 +24,10 @@ $('document').ready(function () {
             },
             dataType: 'json',
             statusCode: {
-                200: function (response) {  // success
+                200: function (response) {
                     console.log(response.results[0].formatted);
                     console.log(response.results[0].components.city);
-                    $("#city").val(response.results[0].components.city);
+                    // $("#city").val(response.results[0].components.city);
                 },
             }
         });
@@ -35,18 +35,9 @@ $('document').ready(function () {
 
     $("#submitButton").on("click", function (e) {
         e.preventDefault();
-        let city = $("#city").val();
+        let city = $("#input-group2").val();
         $("#city").val('');
-        // let startDate = $("#start-datepicker").val().toString();
-        // let endDate = $("#end-datepicker").val().toString();
-        // $("#start-datepicker").val('');
-        // $("#end-datepicker").val('');
-        // if (startDate && startDate != "") {
-        //     startDate += 'T00:00:00Z'
-        // }
-        // if (endDate && endDate != "") {
-        //     endDate += 'T23:59:59Z'
-        // }
+
         console.log(city);
     });
 });
