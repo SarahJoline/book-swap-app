@@ -5,7 +5,7 @@ const db = require("../../models/books");
 
 //API ROUTE to get, post, and delete a new user
 
-router.get("/profile", (req, res) => {
+router.get("/user", (req, res) => {
   db.User.findAll().then(results => {
     res.json(results);
   });
@@ -13,8 +13,11 @@ router.get("/profile", (req, res) => {
 
 router.post("/user/new", (req, res) => {
   db.User.create({
-    username: req.body.username,
+    email: req.body.email,
     password: req.body.password
+  }).then(data => {
+    console.log(data);
+    res.redirect("/");
   });
 });
 

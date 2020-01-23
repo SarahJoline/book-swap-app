@@ -4,10 +4,11 @@ const PORT = process.env.PORT || 7000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("./client"));
+
+app.use(express.static("client"));
 
 const apiRoutes = require("./routes/api/apiRoutes");
-app.use("/", apiRoutes);
+app.use("/api", apiRoutes);
 
 const clientRoutes = require("./routes/client/clientRoutes");
 app.use("/", clientRoutes);

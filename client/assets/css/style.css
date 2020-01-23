@@ -6,7 +6,7 @@ body {
 
 .container {
     position: relative;
-    top: 25vh;
+    top: 28vh;
     width: 70%;
     height: 175px;
 }
@@ -35,13 +35,4 @@ body {
 
 .form-control::-webkit-input-placeholder {
     color: black;
-}
-
-/* .navbar {
-    background-color: cornsilk;
-    height: 9vh;
-}
-
-.form-inline {
-    margin-left: 60%;
-} */
+  }

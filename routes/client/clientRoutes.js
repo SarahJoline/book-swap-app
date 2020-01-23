@@ -7,9 +7,9 @@ router.get("/home", (req, res) => {
   res.sendFile(path.join(__dirname, "../../client/index.html")); // insert html path
 });
 
-router.get("/", (req, res) => {
+router.get("/user/new", (req, res) => {
   // ^^ insert file location
-  res.sendFile(path.join(__dirname, "")); // insert html path
+  res.sendFile(path.join(__dirname, "../../client/sign-up.html")); // insert html path
 });
 
 router.get("/", (req, res) => {
