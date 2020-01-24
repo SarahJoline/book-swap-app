@@ -20,7 +20,7 @@ $("document").ready(function() {
         $("#books").append(`
           <div class="jumbotron">
             <p>${result.items[0].volumeInfo.title}, ${result.items[0].volumeInfo.authors[0]}</p>
-            <a href="${result.items[0].volumeInfo.infoLink}">
+            <a target="blank" href="${result.items[0].volumeInfo.infoLink}">
               <button>Click me</button>
             </a>
           </div>
