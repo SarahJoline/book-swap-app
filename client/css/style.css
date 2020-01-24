@@ -6,47 +6,36 @@ body {
 
 .container {
     position: relative;
-    top: 25vh;
+    top: 15vh;
     width: 70%;
-    height: 175px;
 }
 
 .jumbotron {
-    height: 450px;
+    height: 25%;
     text-shadow: 1px 1px black;
     color: black;
     background: cornsilk;
-    height: 150%;
 }
 
 .input-group {
     width: 70%;
     margin-left: 15%;
     text-align: center;
+    border-color: black;
 }
 
 .display-4 {
     text-align: center;
 }
 
-#input-group2 {
+#city {
     border-color: black;
 }
 
-.form-control::-webkit-input-placeholder {
-    color: black;
+#signinBtn {
+  background-color: cornsilk;
+  border-color: cornsilk;
+  color: black;
+  margin-top: 2%;
+  margin-left: 90%;
 }
-
-.open-button {
-    background-color: cornsilk;
-    margin-top: 1vh;
-    margin-left: 80%;
-}
-/* .navbar {
-    background-color: cornsilk;
-    height: 9vh;
-}
-
-.form-inline {
-    margin-left: 60%;
-} */
