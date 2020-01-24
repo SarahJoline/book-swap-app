@@ -26,7 +26,7 @@ const User = sequelize.define("user", {
 
 const Profile = sequelize.define("profile", {
   photo: {
-    allowNull: false,
+    allowNull: true,
     type: Sequelize.STRING
   },
 
@@ -49,9 +49,9 @@ const Profile = sequelize.define("profile", {
   location: {
     allowNull: false,
     type: Sequelize.STRING
-  },
+  }
 
-  rating: Sequelize.INTEGER
+  //rating: Sequelize.INTEGER
 });
 
 const BooksToLend = sequelize.define("books_I_have", {
@@ -86,6 +86,7 @@ const WantedBooks = sequelize.define("wanted_book", {
 });
 
 User.hasOne(Profile);
+Profile.belongsTo(User);
 User.hasMany(WantedBooks);
 User.hasMany(BooksToLend);
 
