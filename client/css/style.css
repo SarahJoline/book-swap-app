@@ -1,7 +1,7 @@
-body {
+  body {
     background: url(../images/star.jpg) no-repeat center center fixed;
     background-size: cover;
-    font-family: 'Special Elite', cursive;
+    font-family: 'Gelasio', serif;
 }
 
 .container {
@@ -62,3 +62,8 @@ body {
 #dashbox {
   margin-top: 5%;
 }
+
+p {
+  font-family: 'Gelasio', serif;
+}
+

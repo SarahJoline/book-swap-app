@@ -1,5 +1,5 @@
-$("document").ready(function() {
-  $("#searchBtn").on("click", function(e) {
+$("document").ready(function () {
+  $("#searchBtn").on("click", function (e) {
     e.preventDefault();
 
     var bookName = $("#userInput").val();
@@ -17,12 +17,13 @@ $("document").ready(function() {
         console.log(result);
         let title = result.items[0].volumeInfo.title;
         let author = result.items[0].volumeInfo.authors[0];
+        let discription = result.items[0].searchInfo.textSnippet;
         let infoLink = result.items[0].volumeInfo.infoLink;
 
         $("#books").append(`
           <div class="jumbotron">
             <p>
-              ${title}, ${author}
+              ${title}, ${author}, ${discription}
             </p>
             
             <button id="wishlistBtn">Add to List</button>
@@ -34,11 +35,11 @@ $("document").ready(function() {
       }
     });
 
-    $("#wishlistBtn").on("click", function() {
+    $("#wishlistBtn").on("click", function () {
       $.ajax({
         type: "POST",
         url: "/wishlist/new",
-        data: { title, author }
+        data: { title, author, discription }
       }).then(() => {
         $("#wishlist").append(data);
         console.log("success?");
