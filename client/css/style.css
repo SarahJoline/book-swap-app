@@ -6,7 +6,7 @@ body {
 
 .container {
     position: relative;
-    top: 100px;
+    top: 25.5vh;
     width: 70%;
 }
 
@@ -38,4 +38,41 @@ body {
   color: black;
   margin-top: 2%;
   margin-left: 90%;
+}
+
+.nav {
+  background-color: cornsilk;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav4 {
+  position: absolute;
+  margin-left: 65%;
+}
+
+
+
+/* dashboard page */
+#userInput {
+  border-color: black;
+}
+
+#dashbox {
+  /* margin-top: 5%; */
+}
+
+/* profile-set-up */
+#userProfile {
+  margin-top: -5%;
+}
+
+#inputFirstName,
+#inputLastName,
+#inputLocation {
+  border-radius: 3px;
+  border-color: black;
+  border-width: 1px;
 }
