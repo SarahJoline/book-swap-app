@@ -6,7 +6,7 @@ body {
 
 .container {
     position: relative;
-    top: 15vh;
+    top: 25.5vh;
     width: 70%;
 }
 
@@ -40,6 +40,18 @@ body {
   margin-left: 90%;
 }
 
+.nav {
+  background-color: cornsilk;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav4 {
+  margin-left: 100px;
+}
+
 
 
 /* dashboard page */
@@ -49,8 +61,4 @@ body {
 
 #dashbox {
   margin-top: 5%;
-}
-
-#box3 {
-  margin-top: 6.55%;
 }
