@@ -1,5 +1,7 @@
 $("document").ready(function() {
-  $("#searchBtn").on("click", function() {
+  $("#searchBtn").on("click", function(e) {
+    e.preventDefault();
+
     var bookName = $("#userInput").val();
     var bookSearch = bookName
       .split(" ")
@@ -13,19 +15,34 @@ $("document").ready(function() {
       dataType: "JSON",
       success: result => {
         console.log(result);
-        // console.log(result.items[0].volumeInfo.title);
-        // console.log(result.items[0].volumeInfo.authors[0]);
-        console.log(result.items[0].volumeInfo.infoLink);
+        let title = result.items[0].volumeInfo.title;
+        let author = result.items[0].volumeInfo.authors[0];
+        let infoLink = result.items[0].volumeInfo.infoLink;
 
         $("#books").append(`
           <div class="jumbotron">
-            <p>${result.items[0].volumeInfo.title}, ${result.items[0].volumeInfo.authors[0]}</p>
-            <a target="blank" href="${result.items[0].volumeInfo.infoLink}">
-              <button>Click me</button>
+            <p>
+              ${title}, ${author}
+            </p>
+            
+            <button id="wishlistBtn">Add to List</button>
+            <a target="blank" href="${infoLink}">
+              <button>More Info</button>
             </a>
           </div>
         `);
       }
+    });
+
+    $("#wishlistBtn").on("click", function() {
+      $.ajax({
+        type: "POST",
+        url: "/wishlist/new",
+        data: { title, author }
+      }).then(() => {
+        $("#wishlist").append(data);
+        console.log("success?");
+      });
     });
   });
 });
