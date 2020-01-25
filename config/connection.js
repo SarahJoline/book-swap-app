@@ -1,6 +1,8 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("bookswap_db", "root", "mollybear", {
+
+const sequelize = new Sequelize("bookswap_db", "root", "enter password here", {
+
   host: "localhost",
   port: 3306,
   dialect: "mysql",
