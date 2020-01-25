@@ -21,14 +21,14 @@ $("document").ready(function() {
         let infoLink = result.items[0].volumeInfo.infoLink;
 
         $("#books").append(`
-          <div class="jumbotron">
+          <div class="card dashJumbotron">
             <p>
               ${title}, ${author}, ${discription}
             </p>
             <a id="wishlistBtn">
               <button>Add to List</button>
             </a>
-            <a target="blank" href="${infoLink}">
+            <a target="blank" class="moreInfoBtn" href="${infoLink}">
               <button>More Info</button>
             </a>
           </div>`);
