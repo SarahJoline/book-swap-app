@@ -25,8 +25,9 @@ $("document").ready(function() {
             <p>
               ${title}, ${author}, ${discription}
             </p>
-            
-            <button id="wishlistBtn">Add to List</button>
+            <a id="wishlistBtn">
+              <button>Add to List</button>
+            </a>
             <a target="blank" href="${infoLink}">
               <button>More Info</button>
             </a>
