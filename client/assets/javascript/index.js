@@ -37,7 +37,6 @@ $("document").ready(function () {
     });
   });
 
-
   $("#submitButton").on("click", function (e) {
     e.preventDefault();
     let city = $("#city").val();
