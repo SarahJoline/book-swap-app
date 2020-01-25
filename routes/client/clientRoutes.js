@@ -27,7 +27,7 @@ router.get("/booklists", (req, res) => {
   res.sendFile(path.join(__dirname, "../../client/booklist.html")); // insert html path
 });
 
-router.get("/home", (req, res) => {
+router.get("/dashboard", (req, res) => {
   // ^^ insert file location
   res.sendFile(path.join(__dirname, "../../client/dashboard.html")); // insert html path
 });
