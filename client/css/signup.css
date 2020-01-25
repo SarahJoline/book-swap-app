@@ -6,13 +6,13 @@ body {
 
 .container {
     position: relative;
-    top: 109px;
+    top: 25.5vh;
     width: 70%;
 }
 
 .jumbotron {
     
-    padding-top: 5%;
+    padding-top: 3%;
     height: 275px;
     text-shadow: 1px 1px black;
     color: black;
@@ -34,3 +34,11 @@ body {
 #inputPassword {
     border-color: black;
 }
+
+.nav {
+    background-color: cornsilk;
+  }
+  
+  .nav-link {
+    color: black;
+  }
