@@ -14,7 +14,7 @@ $(document).ready(function() {
       url: "/api/user/new",
       data: { email, password },
       success: function(res) {
-        window.location.href = "/profile/new";
+        window.location.href = "/user/profile/new";
       }
     });
   });
@@ -38,11 +38,10 @@ $(document).ready(function() {
 
     $.ajax({
       type: "POST",
-      url: "/api/profile/new",
+      url: "/api/user/profile/new",
       data: { photoLink, firstName, lastName, location },
       success: function(res) {
         console.log(res);
-        console.log("things and stuff");
       }
     });
     // });

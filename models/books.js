@@ -4,8 +4,8 @@ const sequelize = require("../config/connection");
 const User = sequelize.define("user", {
   id: {
     type: Sequelize.INTEGER,
-    primaryKey: true,
     autoIncrement: true,
+    primaryKey: true,
     allowNull: false
   },
   email: {
@@ -50,8 +50,6 @@ const Profile = sequelize.define("profile", {
     allowNull: false,
     type: Sequelize.STRING
   }
-
-  //rating: Sequelize.INTEGER
 });
 
 const BooksToLend = sequelize.define("books_I_have", {
@@ -85,10 +83,10 @@ const WantedBooks = sequelize.define("wanted_book", {
   }
 });
 
-User.hasOne(Profile);
+User.hasOne(Profile, { foreignKey: "userId" });
 Profile.belongsTo(User);
-User.hasMany(WantedBooks);
-User.hasMany(BooksToLend);
+//User.hasMany(WantedBooks, { foreignKey: User.id });
+//User.hasMany(BooksToLend, { foreignKey: User.id });
 
 User.sync();
 WantedBooks.sync();
