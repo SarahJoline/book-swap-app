@@ -6,7 +6,7 @@ body {
 
 .container {
     position: relative;
-    top: 100px;
+    top: 15vh;
     width: 70%;
 }
 
@@ -38,4 +38,19 @@ body {
   color: black;
   margin-top: 2%;
   margin-left: 90%;
+}
+
+
+
+/* dashboard page */
+#userInput {
+  border-color: black;
+}
+
+#dashbox {
+  margin-top: 5%;
+}
+
+#box3 {
+  margin-top: 6.55%;
 }
