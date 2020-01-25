@@ -24,8 +24,9 @@ $("document").ready(function() {
             <p>
               ${title}, ${author}
             </p>
-            
-            <button id="wishlistBtn">Add to List</button>
+            <a id="wishlistBtn">
+              <button>Add to List</button>
+            </a>
             <a target="blank" href="${infoLink}">
               <button>More Info</button>
             </a>
@@ -37,9 +38,11 @@ $("document").ready(function() {
       $.ajax({
         type: "POST",
         url: "/wishlist/new",
-        data: { title, author }
-      }).then(res => {
-        $("#wishlistBtn").res;
+        data: { title: title, author: author },
+        success: function(res) {
+          console.log(res);
+          console.log("success");
+        }
       });
     });
   });
