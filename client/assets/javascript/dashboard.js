@@ -1,5 +1,5 @@
-$("document").ready(function () {
-  $("#searchBtn").on("click", function (e) {
+$("document").ready(function() {
+  $("#searchBtn").on("click", function(e) {
     e.preventDefault();
 
     var bookName = $("#userInput").val();
@@ -30,12 +30,11 @@ $("document").ready(function () {
             <a target="blank" href="${infoLink}">
               <button>More Info</button>
             </a>
-          </div>
-        `);
+          </div>`);
       }
     });
 
-    $("#wishlistBtn").on("click", function () {
+    $("#wishlistBtn").on("click", function() {
       $.ajax({
         type: "POST",
         url: "/wishlist/new",
