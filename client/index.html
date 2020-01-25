@@ -8,13 +8,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Group Project #2</title>
 </head>
 
 <body>
-    <a class="btn btn-primary" id="signinBtn" href="sign-up.html" role="button">Sign In</a>
+
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="profile-set-up.html">Profile Set Up</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav4" href="sign-up.html">Sign In</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="profile.html">Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="booklist.html">Booklist</a>
+        </li>
+    </ul>
+
     <div class="container" id="box">
         <div class="jumbotron mt-4">
             <bold>
@@ -24,13 +45,18 @@
                     <input type="text" class="form-control input-group2" id="city" placeholder="Enter City Name"
                         aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-dark" type="button" id="submitButton"><i
-                            class="fa fa-search"></i></button>
+                        <button class="btn btn-outline-dark" type="button" id="submitButton">
+                            <i class="fa fa-search"></i></button>
                     </div>
                 </div>
             </bold>
         </div>
     </div>
+
+    <footer>
+        <img src="./images/GitHub-Mark-32px.png" alt="github logo">
+        <a class="github" href="https://github.com/SarahJoline/book-swap-app">GitHub</a>
+    </footer>
 
     <!-- JQuery  -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -38,8 +64,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
-    
+
     <!-- Javascript -->
     <script src="./assets/javascript/index.js"></script>
 </body>
+
 </html>
