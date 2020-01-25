@@ -29,8 +29,7 @@ $("document").ready(function() {
             <a target="blank" href="${infoLink}">
               <button>More Info</button>
             </a>
-          </div>
-        `);
+          </div>`);
       }
     });
 
@@ -39,9 +38,8 @@ $("document").ready(function() {
         type: "POST",
         url: "/wishlist/new",
         data: { title, author }
-      }).then(() => {
-        $("#wishlist").append(data);
-        console.log("success?");
+      }).then(res => {
+        $("#wishlistBtn").res;
       });
     });
   });
