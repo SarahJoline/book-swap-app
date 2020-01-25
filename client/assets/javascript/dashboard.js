@@ -17,12 +17,13 @@ $("document").ready(function() {
         console.log(result);
         let title = result.items[0].volumeInfo.title;
         let author = result.items[0].volumeInfo.authors[0];
+        let discription = result.items[0].searchInfo.textSnippet;
         let infoLink = result.items[0].volumeInfo.infoLink;
 
         $("#books").append(`
           <div class="jumbotron">
             <p>
-              ${title}, ${author}
+              ${title}, ${author}, ${discription}
             </p>
             <a id="wishlistBtn">
               <button>Add to List</button>
@@ -38,12 +39,13 @@ $("document").ready(function() {
       $.ajax({
         type: "POST",
         url: "/wishlist/new",
-        data: { title: title, author: author },
-        success: function(res) {
-          console.log(res);
-          console.log("success");
-        }
+        data: { title, author, discription }
+      }).then(() => {
+        $("#wishlist").append(data);
+        console.log("success?");
       });
     });
   });
+
+  console.log("Hello");
 });

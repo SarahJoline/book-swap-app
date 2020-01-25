@@ -1,8 +1,7 @@
-$("document").ready(function () {
-  navigator.geolocation.getCurrentPosition(function (position) {
+$("document").ready(function() {
+  navigator.geolocation.getCurrentPosition(function(position) {
     const lon = position.coords.longitude;
     const lat = position.coords.latitude;
-
 
     console.log(lat, lon);
     console.log(position);
@@ -27,7 +26,7 @@ $("document").ready(function () {
       },
       dataType: "json",
       statusCode: {
-        200: function (response) {
+        200: function(response) {
           // success
           console.log(response.results[0].formatted);
           console.log(response.results[0].components.city);
@@ -37,12 +36,10 @@ $("document").ready(function () {
     });
   });
 
-  $("#submitButton").on("click", function (e) {
+  $("#submitButton").on("click", function(e) {
     e.preventDefault();
     let city = $("#city").val();
     console.log(city);
     window.location.href = "../../dashboard.html";
-
   });
-
 });
