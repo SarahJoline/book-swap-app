@@ -87,7 +87,7 @@ router.post("/wishlist/new", (req, res) => {
     title: req.body.title,
     author: req.body.author
   }).then(results => {
-    console.log(results);
+    res.send(results);
   });
 });
 

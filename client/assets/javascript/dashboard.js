@@ -1,30 +1,17 @@
 $("document").ready(function() {
-  $("#searchBtn").on("click", function(e) {
-    e.preventDefault();
+  const urlParams = new URLSearchParams(window.location.search);
 
-    var bookName = $("#userInput").val();
-    var bookSearch = bookName
-      .split(" ")
-      .join("+")
-      .toLowerCase();
-    // console.log(bookSearch);
+  const title = urlParams.get("title");
+  const author = urlParams.get("author");
+  const description = urlParams.get("description");
+  const link = urlParams.get("link");
 
-    $.ajax({
-      method: "GET",
-      url: `https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`,
-      dataType: "JSON",
-      success: result => {
-        console.log(result);
-        let title = result.items[0].volumeInfo.title;
-        let author = result.items[0].volumeInfo.authors[0];
-        let description = result.items[0].searchInfo.textSnippet;
-        let infoLink = result.items[0].volumeInfo.infoLink;
-        // console.log(result.items[0].volumeInfo.title);
-        console.log(author);
+  if (title == null || author == null) {
+    console.log("there is no values for title and author");
+  } else {
+    console.log(title, author, description, link);
 
-        window.location.href = `/dashboard?title=${title}&author=${author}`;
-
-        $("#myWishlist").append(`
+    $("#myWishlist").append(`
           <div class="jumbotron">
             <p>
               ${title}, ${author}
@@ -35,29 +22,46 @@ $("document").ready(function() {
             <a id="addToWishlist" data-title=${title} data-author=${author} data-description=${description}>
               <button>Add to List</button>
             </a>
-            <a target="blank" href="${infoLink}">
+            <a target="blank" href="${link}">
               <button>More Info</button>
             </a>
           </div>`);
+  }
+
+  $("#searchBtn").on("click", function(e) {
+    e.preventDefault();
+
+    var bookName = $("#userInput").val();
+    var bookSearch = bookName
+      .split(" ")
+      .join("+")
+      .toLowerCase();
+
+    $.ajax({
+      method: "GET",
+      url: `https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`,
+      dataType: "JSON",
+      success: result => {
+        let title = result.items[0].volumeInfo.title;
+        let author = result.items[0].volumeInfo.authors[0];
+        let description = result.items[0].searchInfo.textSnippet;
+        let link = result.items[0].volumeInfo.infoLink;
+
+        window.location.href = `/dashboard?title=${title}&author=${author}&description=${description}&link=${link}`;
       }
     });
+  });
 
-    $(document).on("click", "#addToWishlist", function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const title = urlParams.get("title");
-      const author_again = urlParams.get("author");
+  $(document).on("click", "#addToWishlist", function() {
+    console.log(title, author);
 
-      console.log(title);
-      console.log(author_again);
-
-      // $.ajax({
-      //   type: "POST",
-      //   url: "/wishlist/",
-      //   data: { title, author, description }
-      // }).then(() => {
-      //   $("#wishlist").append(data);
-      //   console.log("success?");
-      // });
+    $.ajax({
+      type: "POST",
+      url: "/api/wishlist/new",
+      data: { title, author },
+      success: function(res) {
+        console.log("successful post");
+      }
     });
   });
 });
