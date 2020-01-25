@@ -22,10 +22,12 @@ $("document").ready(function() {
         // console.log(result.items[0].volumeInfo.title);
         console.log(author);
 
+        $("#books").append(`
+          <div class="card dashJumbotron">
         window.location.href = `/dashboard?title=${title}&author=${author}`;
-
         $("#myWishlist").append(`
           <div class="jumbotron">
+
             <p>
               ${title}, ${author}
             </p>
@@ -35,7 +37,7 @@ $("document").ready(function() {
             <a id="addToWishlist" data-title=${title} data-author=${author} data-description=${description}>
               <button>Add to List</button>
             </a>
-            <a target="blank" href="${infoLink}">
+            <a target="blank" class="moreInfoBtn" href="${infoLink}">
               <button>More Info</button>
             </a>
           </div>`);
