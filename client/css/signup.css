@@ -42,3 +42,8 @@ body {
   .nav-link {
     color: black;
   }
+
+  .nav4 {
+    position: absolute;
+    margin-left: 65%;
+  }
