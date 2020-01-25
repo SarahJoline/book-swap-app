@@ -11,65 +11,41 @@
   <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
-  <title>Profile</title>
+  <title>Dashboard</title>
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="card-group">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-            content.
-            This content is a little bit longer.</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-            content.
-            This card has even longer content than the first to show that equal height action.</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="dashboard.html">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sign-up.html">Sign In</a>
+    </li>
+  </ul>
 
-    <div class="card" style="width: 18rem;">
-      <div class="card-header">
-        Pending Swaps
+  <div class="container" id="box3">
+    <div class="jumbotron mt-4">
+      <div class="input-group mb-3" id="dashbox">
+        <input type="text" class="form-control" id="userInput" placeholder="Enter book name here">
+          <div class="input-group-append">
+          <button class="btn btn-dark" type="button" id="searchBtn">Button</button>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Game of Thrones</li>
-        <li class="list-group-item">The Witcher</li>
-        <li class="list-group-item">Lord of the Rings</li>
-      </ul>
-    </div>
-    <!-- Container end -->
+    <div id="books"></div>
   </div>
+</div>
 
   <!-- JQuery  -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
   <!-- Javascript -->
   <script src="./assets/javascript/dashboard.js"></script>
 </body>

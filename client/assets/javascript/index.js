@@ -1,8 +1,8 @@
 $("document").ready(function () {
-
   navigator.geolocation.getCurrentPosition(function (position) {
     const lon = position.coords.longitude;
     const lat = position.coords.latitude;
+
 
     console.log(lat, lon);
     console.log(position);
@@ -44,4 +44,5 @@ $("document").ready(function () {
     window.location.href = "../../dashboard.html";
 
   });
+
 });

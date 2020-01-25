@@ -37,15 +37,15 @@ router.get("/profile", (req, res) => {
   });
 });
 
-router.post("/profile/new", (req, res) => {
+router.post("/user/profile/new", (req, res) => {
   db.Profile.create({
     photo: req.body.photo,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    location: req.body.location,
-    rating: req.bosy.rating
-  }).then(results => {
-    console.log(results);
+    location: req.body.location
+  }).then(data => {
+    console.log(data);
+    res.redirect("/");
   });
 });
 

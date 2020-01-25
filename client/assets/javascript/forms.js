@@ -11,12 +11,39 @@ $(document).ready(function() {
 
     $.ajax({
       type: "POST",
-      url: "/api",
+      url: "/api/user/new",
       data: { email, password },
       success: function(res) {
-        $("#inputEmail").val("");
-        $("#inputPassword").val("");
+        window.location.href = "/user/profile/new";
       }
     });
+  });
+
+  $("#userProfile").submit(function(e) {
+    e.preventDefault();
+
+    var photoLink = $("#photoUpload")
+      .val()
+      .trim();
+
+    var firstName = $("#inputFirstName")
+      .val()
+      .trim();
+    var lastName = $("#inputLastName")
+      .val()
+      .trim();
+    var location = $("#inputLocation")
+      .val()
+      .trim();
+
+    $.ajax({
+      type: "POST",
+      url: "/api/user/profile/new",
+      data: { photoLink, firstName, lastName, location },
+      success: function(res) {
+        console.log(res);
+      }
+    });
+    // });
   });
 });

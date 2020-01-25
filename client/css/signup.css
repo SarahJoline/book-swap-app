@@ -11,6 +11,8 @@ body {
 }
 
 .jumbotron {
+    
+    padding-top: 3%;
     height: 275px;
     text-shadow: 1px 1px black;
     color: black;
@@ -28,37 +30,15 @@ body {
     text-align: center;
 }
 
-#city {
+#inputEmail, 
+#inputPassword {
     border-color: black;
 }
 
-#signinBtn {
-  background-color: cornsilk;
-  border-color: cornsilk;
-  color: black;
-  margin-top: 2%;
-  margin-left: 90%;
-}
-
 .nav {
-  background-color: cornsilk;
-}
-
-.nav-link {
-  color: black;
-}
-
-.nav4 {
-  margin-left: 100px;
-}
-
-
-
-/* dashboard page */
-#userInput {
-  border-color: black;
-}
-
-#dashbox {
-  margin-top: 5%;
-}
+    background-color: cornsilk;
+  }
+  
+  .nav-link {
+    color: black;
+  }
