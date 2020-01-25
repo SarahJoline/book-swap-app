@@ -49,7 +49,8 @@ body {
 }
 
 .nav4 {
-  margin-left: 100px;
+  position: absolute;
+  margin-left: 65%;
 }
 
 
@@ -60,5 +61,18 @@ body {
 }
 
 #dashbox {
-  margin-top: 5%;
+  /* margin-top: 5%; */
+}
+
+/* profile-set-up */
+#userProfile {
+  margin-top: -5%;
+}
+
+#inputFirstName,
+#inputLastName,
+#inputLocation {
+  border-radius: 3px;
+  border-color: black;
+  border-width: 1px;
 }
