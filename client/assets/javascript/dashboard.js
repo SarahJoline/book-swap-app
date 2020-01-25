@@ -17,15 +17,22 @@ $("document").ready(function() {
         console.log(result);
         let title = result.items[0].volumeInfo.title;
         let author = result.items[0].volumeInfo.authors[0];
-        let discription = result.items[0].searchInfo.textSnippet;
+        let description = result.items[0].searchInfo.textSnippet;
         let infoLink = result.items[0].volumeInfo.infoLink;
+        // console.log(result.items[0].volumeInfo.title);
+        console.log(author);
 
-        $("#books").append(`
+        window.location.href = `/dashboard?title=${title}&author=${author}`;
+
+        $("#myWishlist").append(`
           <div class="jumbotron">
             <p>
-              ${title}, ${author}, ${discription}
+              ${title}, ${author}
             </p>
-            <a id="wishlistBtn">
+            <p>
+              ${description}
+            </p>
+            <a id="addToWishlist" data-title=${title} data-author=${author} data-description=${description}>
               <button>Add to List</button>
             </a>
             <a target="blank" href="${infoLink}">
@@ -35,17 +42,22 @@ $("document").ready(function() {
       }
     });
 
-    $("#wishlistBtn").on("click", function() {
-      $.ajax({
-        type: "POST",
-        url: "/wishlist/new",
-        data: { title, author, discription }
-      }).then(() => {
-        $("#wishlist").append(data);
-        console.log("success?");
-      });
+    $(document).on("click", "#addToWishlist", function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const title = urlParams.get("title");
+      const author_again = urlParams.get("author");
+
+      console.log(title);
+      console.log(author_again);
+
+      // $.ajax({
+      //   type: "POST",
+      //   url: "/wishlist/",
+      //   data: { title, author, description }
+      // }).then(() => {
+      //   $("#wishlist").append(data);
+      //   console.log("success?");
+      // });
     });
   });
-
-  console.log("Hello");
 });
