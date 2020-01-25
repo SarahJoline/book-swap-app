@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  const id = urlParams.get("id");
+
   $("#userForm").submit(function(e) {
     e.preventDefault();
 
@@ -13,37 +17,11 @@ $(document).ready(function() {
       type: "POST",
       url: "/api/user/new",
       data: { email, password },
-      success: function(res) {
-        window.location.href = "/user/profile/new";
+      success: function(data) {
+        console.log(data);
+        let id = data.id;
+        window.location.href = `/user/profile/new/?id=${id}`;
       }
     });
-  });
-
-  $("#userProfile").submit(function(e) {
-    e.preventDefault();
-
-    var photoLink = $("#photoUpload")
-      .val()
-      .trim();
-
-    var firstName = $("#inputFirstName")
-      .val()
-      .trim();
-    var lastName = $("#inputLastName")
-      .val()
-      .trim();
-    var location = $("#inputLocation")
-      .val()
-      .trim();
-
-    $.ajax({
-      type: "POST",
-      url: "/api/user/profile/new",
-      data: { photoLink, firstName, lastName, location },
-      success: function(res) {
-        console.log(res);
-      }
-    });
-    // });
   });
 });
