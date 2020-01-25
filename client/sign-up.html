@@ -1,57 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/signup.css">
-  <title>Sign Up</title>
-</head>
-
-<body>
-
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" href="index.html">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="dashboard.html">Dashboard</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="profile-set-up.html">Profile Set Up</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link nav4" href="sign-up.html">Sign In</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="profile.html">Profile</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="booklist.html">Booklist</a>
-    </li>
-  </ul>
-
-  <div class="container" id="box">
-    <div class="jumbotron mt-4">
-      <form id="userForm">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" placeholder="Enter Email" id="inputEmail" />
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" placeholder="Enter Password" id="inputPassword" />
-        </div>
-        <button type="submit" class="btn btn-dark" id="userSubmit">Sign In</button>
-      </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Sign Up</title>
+  </head>
+  
+  <body>
+    <div class="container" id="box">
+      <div class="jumbotron mt-4 signupJumbo">
+        <form id="userForm">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" placeholder="Enter Email" id="inputEmail" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" placeholder="Enter Password" id="inputPassword" />
+          </div>
+          <button type="submit" class="btn btn-dark" id="userSubmit">Sign In</button>
+        </form>
+      </div>
     </div>
   </div>
 
+  <footer>
+    <img src="./images/GitHub-Mark-32px.png" alt="github logo">
+    <a class="github" href="https://github.com/SarahJoline/book-swap-app">GitHub</a>
+  </footer>
+  
   <!-- JQuery  -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -64,5 +48,4 @@
   </script>
   <script src="/assets/javascript/forms.js"></script>
 </body>
-
 </html>

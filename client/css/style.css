@@ -6,7 +6,7 @@ body {
 
 .container {
     position: relative;
-    top: 25.5vh;
+    top: 17vh;
     width: 70%;
 }
 
@@ -53,6 +53,33 @@ body {
   margin-left: 65%;
 }
 
+footer {
+  padding: 8px;
+  background-color: cornsilk;
+  margin-top: 39vh;
+  text-align: center;
+}
+
+.github {
+  color: black;
+}
+
+
+
+/* sign up page */
+.signupJumbo {
+  padding-top: 3%;
+}
+
+.display-4 {
+  text-align: center;
+}
+
+#inputEmail, 
+#inputPassword {
+    border-color: black;
+}
+
 
 
 /* dashboard page */
@@ -60,9 +87,7 @@ body {
   border-color: black;
 }
 
-#dashbox {
-  /* margin-top: 5%; */
-}
+
 
 /* profile-set-up */
 #userProfile {
