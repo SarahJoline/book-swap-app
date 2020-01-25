@@ -24,13 +24,13 @@ $("document").ready(function() {
             <p>
               ${title}, ${author}
             </p>
-            
-            <button id="wishlistBtn">Add to List</button>
+            <a id="wishlistBtn">
+              <button>Add to List</button>
+            </a>
             <a target="blank" href="${infoLink}">
               <button>More Info</button>
             </a>
-          </div>
-        `);
+          </div>`);
       }
     });
 
@@ -38,10 +38,11 @@ $("document").ready(function() {
       $.ajax({
         type: "POST",
         url: "/wishlist/new",
-        data: { title, author }
-      }).then(() => {
-        $("#wishlist").append(data);
-        console.log("success?");
+        data: { title: title, author: author },
+        success: function(res) {
+          console.log(res);
+          console.log("success");
+        }
       });
     });
   });
