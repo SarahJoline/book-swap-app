@@ -1,15 +1,16 @@
-$("document").ready(function() {
+$("document").ready(function () {
   // $("#start-datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
   // $("#end-datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
 
 
-  navigator.geolocation.getCurrentPosition(function(position) {
-    
+  navigator.geolocation.getCurrentPosition(function (position) {
+
     const lon = position.coords.longitude;
     const lat = position.coords.latitude;
 
 
     console.log(lat, lon);
+
     let apikey = "cc5ff5524ad449ad9cd3d2a5117d86a2";
 
     let request_url =
@@ -30,7 +31,7 @@ $("document").ready(function() {
       },
       dataType: "json",
       statusCode: {
-        200: function(response) {
+        200: function (response) {
           // success
           console.log(response.results[0].formatted);
           console.log(response.results[0].components.city);
@@ -41,7 +42,7 @@ $("document").ready(function() {
   });
 
 
-  $("#submitButton").on("click", function(e) {
+  $("#submitButton").on("click", function (e) {
     e.preventDefault();
     let city = $("#city").val();
     console.log(city);
