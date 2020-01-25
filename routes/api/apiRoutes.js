@@ -5,10 +5,20 @@ const db = require("../../models/books");
 
 //API ROUTE to get, post, and delete a new user
 
+let = userArray = [];
+
 router.get("/user", (req, res) => {
-  db.User.findAll().then(results => {
-    res.json(results);
+  db.User.findAll({
+    include: [db.Profile]
+  }).then(data => {
+    console.log(data);
+
+    data.forEach(user => {
+      console.log(user.dataValues);
+      userArray.push(user.dataValues);
+    });
   });
+  res.json(userArray);
 });
 
 router.post("/user/new", (req, res) => {
@@ -17,7 +27,8 @@ router.post("/user/new", (req, res) => {
     password: req.body.password
   }).then(data => {
     console.log(data);
-    res.redirect("/");
+    // res.redirect("/");
+    res.send(data);
   });
 });
 
@@ -31,21 +42,22 @@ router.delete("/user/delete/:id", (req, res) => {
 
 //API ROUTES to get and post a profile
 
-router.get("/profile", (req, res) => {
+router.get("/user/profile", (req, res) => {
   db.Profile.findAll().then(results => {
     res.json(results);
   });
 });
 
-router.post("/user/profile/new", (req, res) => {
+router.post(`/user/profile/:id`, (req, res) => {
   db.Profile.create({
+    userId: req.body.id,
     photo: req.body.photo,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     location: req.body.location
   }).then(data => {
     console.log(data);
-    res.redirect("/");
+    // res.redirect("/");
   });
 });
 
