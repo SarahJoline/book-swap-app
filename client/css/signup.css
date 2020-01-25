@@ -6,11 +6,13 @@ body {
 
 .container {
     position: relative;
-    top: 100px;
+    top: 109px;
     width: 70%;
 }
 
 .jumbotron {
+    
+    padding-top: 5%;
     height: 275px;
     text-shadow: 1px 1px black;
     color: black;
@@ -28,14 +30,7 @@ body {
     text-align: center;
 }
 
-#city {
+#inputEmail, 
+#inputPassword {
     border-color: black;
-}
-
-#signinBtn {
-  background-color: cornsilk;
-  border-color: cornsilk;
-  color: black;
-  margin-top: 2%;
-  margin-left: 90%;
 }
