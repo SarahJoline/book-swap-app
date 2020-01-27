@@ -4,6 +4,8 @@
     font-family: 'Gelasio', serif;
   }
 
+  /* Home Page */
+
   .container {
     position: relative;
     top: 17vh;
@@ -12,8 +14,6 @@
 
   .jumbotron {
     height: 275px;
-    text-shadow: 1px 1px black;
-    color: black;
     background: cornsilk;
   }
 
@@ -56,7 +56,7 @@
   footer {
     padding: 8px;
     background-color: cornsilk;
-    margin-top: 39vh;
+    margin-top: 90vh;
     text-align: center;
     
     
@@ -81,22 +81,6 @@
   #inputPassword {
     border-color: black;
   }
-
-
-
-  /* dashboard page */
-  #userInput {
-    border-color: black;
-  }
-
-  p {
-    font-family: 'Gelasio', serif;
-  }
-
-  #dashbox {
-    margin-top: 2.5%;
-  }
-
 
 
   /* profile-set-up */
