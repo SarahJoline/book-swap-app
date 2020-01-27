@@ -15,21 +15,15 @@ $("document").ready(function() {
     console.log(title, author, description, link);
 
     $("#myWishlist").append(`
-          <div class="jumbotron">
-            <p>
-              ${title}, ${author}
-            </p>
-            <p>
-              ${description}
-            </p>
-            <a id="addToWishlist" data-title=${title} data-author=${author} data-description=${description}>
-              <button id="addToWishList">Add to List</button>
-              <button id="addToMyBooks">I have this book!</button>
-            </a>
-            <a target="blank" href="${link}">
-              <button>More Info</button>
-            </a>
-          </div>`);
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">${title}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${author}</h6>
+          <p class="card-text">${description}</p>
+          <a data-title=${title} data-author=${author} data-description=${description} class="card-link" id="addToWishlist"><button>Add to List</button></a>
+          <a target="blank" href=${link} class="card-link"><button>More Info</button></a>
+        </div>
+      </div>`);
   }
 
   $("#searchBtn").on("click", function(e) {
