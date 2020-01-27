@@ -83,11 +83,12 @@ const WantedBooks = sequelize.define("wanted_book", {
   }
 });
 
-//User.hasOne(Profile, { foreignKey: "id", sourceKey: "userId" });
 Profile.belongsTo(User);
 User.hasOne(Profile);
 User.hasMany(WantedBooks);
+//BooksToLend.belongsToMany(User, { as: "books_i_haves" });
 User.hasMany(BooksToLend);
+//WantedBooks.belongsToMany(User, { as: "wanted_books" });
 
 User.sync();
 WantedBooks.sync();
