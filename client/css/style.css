@@ -116,25 +116,71 @@
   /* user profile page */
   
 
-  #cardA {
-    float: left;
-    margin-right: 10%;
-    height: 200px;
-    width: 40%;
+  #profileRow {
+    margin-top: 5vh;
+    margin-left: 8%;
   }
 
+  .cardContainer8 {
+    font-size: 0.80rem;
+    padding: 10px;
+    height: 28vh;
+    width: 35%;
+    background-color: cornsilk;
+    margin-bottom: 20px;
+    float: left;
+    clear: right;
+    overflow: visible;
+  }
+
+  .float-img {
+    background: url(../assets/images/starfield.jpg) no-repeat center center fixed;
+    background-size: cover;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+
+#p2 {
+  clear: right;
+  overflow: visible;
+  margin-top: 10px;
+}
+
+
+#bookRow {
+  padding-top: 5vh;
+}
 
   .column {
     float: left;
-    width: 40%;
-    margin-left: 7%;
+    width: 38%;
+    margin-left: 9%;
   }
 
-  
-  #userPending {
-    margin-right: 10%;
+#titleInventory {
+background-color: cornsilk;
 }
 
-  #userWishlist {
-    margin-right: 10%;
+#titlePending {
+  background-color: cornsilk;
+}
+
+#titleWishlist {
+  background-color: cornsilk;
+}
+  
+#userPending {
+  margin-right: 10%;
+}
+
+#userWishlist {
+  margin-right: 10%;
+  }
+
+#profileFooter {
+  padding: 8px;
+  background-color: cornsilk;
+  margin-top: 90vh;
+  text-align: center;
   }
