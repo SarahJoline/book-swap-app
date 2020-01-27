@@ -15,27 +15,28 @@ const db = require("./models/books.js");
 //   onDelete: "cascade"
 // });
 
-// db.User.findAll({
-//   raw: true,
-//   include: [db.Profile]
-// })
-//   .then(data => {
-//     console.log(data);
-//     var MickyArr = [];
+db.User.findAll({
+  //raw: true,
+  include: [db.Profile, db.WantedBooks]
+})
+  .then(data => {
+    //console.log(data);
+    var MickyArr = [];
 
-//     data.forEach(user => {
-//       console.log(user.dataValues);
-//       MickyArr.push(user.dataValues);
-//     });
+    data.forEach(user => {
+      //console.log(user.dataValues);
+      MickyArr.push(user.dataValues);
+      MickyArr.push(user.dataValues.wanted_books);
+    });
 
-//     console.log(MickyArr);
-//     console.table(MickyArr);
-//     console.log(MickyArr[2].profile.dataValues);
-//     console.log(MickyArr[2].profile.dataValues.userId);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
+    //onsole.log(MickyArr);
+    console.table(MickyArr);
+    console.log(MickyArr[10].wanted_books);
+    // console.log(MickyArr[2].profile.dataValues.userId);
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
 // db.User.create({
 //   email: "Sarah@Home.com",
@@ -117,28 +118,42 @@ const db = require("./models/books.js");
 
 // ======================
 
-db.User.create({
-  email: "Hey@gonetobed.com",
-  password: "Hungus"
-})
-  .then(data => {
-    console.log(data);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+// db.User.create({
+//   id: 100,
+//   email: "MickeyMouse@Home.com",
+//   password: "Napping"
+// })
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
 
-db.Profile.create({
-  photo: "Toe",
-  firstName: "Hannah",
-  lastName: "Moench",
-  location: "Walnut Creek",
+// db.Profile.create({
+//   photo: "Toe",
+//   firstName: "Jocelyn",
+//   lastName: "Chavez",
+//   location: "Los Angeles",
 
-  userId: 90
-})
-  .then(data => {
-    console.log(data);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+//   userId: 100
+// })
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
+
+// db.WantedBooks.create({
+//   title: "Crime and Punishment",
+//   author: "Dostoyevsky",
+
+//   userId: 100
+// })
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });

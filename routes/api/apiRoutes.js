@@ -14,7 +14,10 @@ router.get("/user", (req, res) => {
     console.log(data);
 
     data.forEach(user => {
+      console.log(user.dataValues);
       userArray.push(user.dataValues);
+      userArray.push(user.dataValues.wanted_books);
+      userArray.push(user.dataValues.books_I_haves);
     });
   });
   res.json(userArray);
@@ -41,10 +44,7 @@ router.delete("/user/delete/:id", (req, res) => {
 //API ROUTES to get and post a profile
 
 router.get("/user/profile", (req, res) => {
-  db.Profile.findAll({}).then(data => {
-    data.forEach(profile => {
-      userArray.push(profile.dataValues);
-    });
+  db.Profile.findAll({}).then(results => {
     res.json(results);
   });
 });
@@ -70,17 +70,17 @@ router.get("/mybooks", (req, res) => {
   });
 });
 
-router.post("/mybooks/new/:id", (req, res) => {
+router.post("/user/mybooks/:id", (req, res) => {
   db.BooksToLend.create({
     userId: req.body.id,
-    title: req.body.title,
-    author: req.body.author
+    bookTitle: req.body.title,
+    bookAuthor: req.body.bookAuthor
   }).then(data => {
     res.send(data);
   });
 });
 
-router.delete("/mybooks/delete/:id", (req, res) => {
+router.delete("/user/mybooks/delete/:id", (req, res) => {
   db.BooksToLend.destroy({
     where: { id: req.params.id }
   }).then(() => {
@@ -96,17 +96,17 @@ router.get("/user/wishlist", (req, res) => {
   });
 });
 
-router.post("/user/profile/wishlist/new/:id", (req, res) => {
+router.post("/user/wishlist/:id", (req, res) => {
   db.WantedBooks.create({
     userId: req.body.id,
-    title: req.body.title,
-    author: req.body.author
+    bookTitle: req.body.bookTitle,
+    bookAuthor: req.body.bookAuthor
   }).then(data => {
     res.send(data);
   });
 });
 
-router.delete("/wishlist/delete/:id", (req, res) => {
+router.delete("/user/wishlist/delete/:id", (req, res) => {
   db.WantedBooks.destroy({
     where: { id: req.params.id }
   }).then(() => {
