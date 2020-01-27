@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="box3">
+        <div class="jumbotron mt-4">
+          <bold>
+            <h1 class="display-4">Add a Book to your list</h1>
+            <br>
+            <div class="input-group mb-3" id="myBooksInputValue">
+              <input type="text" class="form-control" id="userInputForMyBooks" placeholder="Books I have">
+              <div class="input-group-append">
+                <button class="btn btn-dark" type="button" id="searchBtn"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+            <div id="myBooks"></div>
+          </bold>
+
+          <!-- JQuery  -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Javascript -->
+<script src="./assets/javascript/myBooks.js"></script>
+</body>
+</html>

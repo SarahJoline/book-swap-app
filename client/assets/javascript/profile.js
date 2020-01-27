@@ -21,15 +21,15 @@ $(document).ready(function() {
       .val()
       .trim();
 
-    console.log(photoLink, firstName, lastName, location, id);
     $.ajax({
       type: "POST",
       url: `/api/user/profile/new/?id=${id}`,
-      data: { photoLink, firstName, lastName, location, id }
-    }).then(data => {
-      userId = id;
-      console.log(id);
-      //console.log(data);
+      data: { photoLink, firstName, lastName, location, id },
+      success: function(data) {
+        userId = id;
+        console.log(id);
+        window.location.href = `/dashboard/?id=${id}`;
+      }
     });
   });
 });

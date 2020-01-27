@@ -1,10 +1,13 @@
 $("document").ready(function() {
   const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("id");
 
   const title = urlParams.get("title");
   const author = urlParams.get("author");
   const description = urlParams.get("description");
   const link = urlParams.get("link");
+
+  let bookArray = [];
 
   if (title == null || author == null) {
     console.log("there is no values for title and author");
@@ -37,24 +40,34 @@ $("document").ready(function() {
       url: `https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`,
       dataType: "JSON",
       success: result => {
-        let title = result.items[0].volumeInfo.title;
-        let author = result.items[0].volumeInfo.authors[0];
+        let bookTitle = result.items[0].volumeInfo.title;
+        let bookAuthor = result.items[0].volumeInfo.authors[0];
         let description = result.items[0].searchInfo.textSnippet;
         let link = result.items[0].volumeInfo.infoLink;
 
-        window.location.href = `/dashboard?title=${title}&author=${author}&description=${description}&link=${link}`;
+        window.location.href = `/dashboard?title=${bookTitle}&author=${bookAuthor}&description=${description}&link=${link}&${id}`;
+
+        bookArray.push(result);
       }
     });
   });
 
-  $(document).on("click", "#addToWishlist", function() {
-    console.log(title, author);
+  $("#addToWishlist").on("click", function(e) {
+    e.preventDefault();
+    //bookArray.push(title, author);
+    //bookArray.push(bookTitle);
+    console.log(bookArray);
+
+    var title = bookArray.bookTitle;
+    var author = bookArray.bookAuthor;
 
     $.ajax({
       type: "POST",
-      url: "/api/wishlist/new",
-      data: { title, author },
+      url: `/api/user/profile/wishlist/?id=${id}`,
+      data: { title, author, id },
       success: function(res) {
+        userId = id;
+        console.log(bookArray);
         console.log("successful post");
       }
     });

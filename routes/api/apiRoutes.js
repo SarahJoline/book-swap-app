@@ -5,16 +5,15 @@ const db = require("../../models/books");
 
 //API ROUTE to get, post, and delete a new user
 
-let = userArray = [];
+let userArray = [];
 
 router.get("/user", (req, res) => {
   db.User.findAll({
-    include: [db.Profile]
+    include: [db.Profile, db.WantedBooks, db.BooksToLend]
   }).then(data => {
     console.log(data);
 
     data.forEach(user => {
-      console.log(user.dataValues);
       userArray.push(user.dataValues);
     });
   });
@@ -27,7 +26,6 @@ router.post("/user/new", (req, res) => {
     password: req.body.password
   }).then(data => {
     console.log(data);
-    // res.redirect("/");
     res.send(data);
   });
 });
@@ -43,7 +41,10 @@ router.delete("/user/delete/:id", (req, res) => {
 //API ROUTES to get and post a profile
 
 router.get("/user/profile", (req, res) => {
-  db.Profile.findAll().then(results => {
+  db.Profile.findAll({}).then(data => {
+    data.forEach(profile => {
+      userArray.push(profile.dataValues);
+    });
     res.json(results);
   });
 });
@@ -57,7 +58,7 @@ router.post(`/user/profile/:id`, (req, res) => {
     location: req.body.location
   }).then(data => {
     console.log(data);
-    // res.redirect("/");
+    res.send(data);
   });
 });
 
@@ -69,12 +70,13 @@ router.get("/mybooks", (req, res) => {
   });
 });
 
-router.post("/mybooks/new", (req, res) => {
+router.post("/mybooks/new/:id", (req, res) => {
   db.BooksToLend.create({
+    userId: req.body.id,
     title: req.body.title,
     author: req.body.author
-  }).then(results => {
-    console.log(results);
+  }).then(data => {
+    res.send(data);
   });
 });
 
@@ -88,18 +90,19 @@ router.delete("/mybooks/delete/:id", (req, res) => {
 
 //API ROUTES to get, post and delete books from our wanted list
 
-router.get("/wishlist", (req, res) => {
+router.get("/user/wishlist", (req, res) => {
   db.WantedBooks.findAll().then(results => {
     res.json(results);
   });
 });
 
-router.post("/wishlist/new", (req, res) => {
+router.post("/user/profile/wishlist/new/:id", (req, res) => {
   db.WantedBooks.create({
+    userId: req.body.id,
     title: req.body.title,
     author: req.body.author
-  }).then(results => {
-    res.send(results);
+  }).then(data => {
+    res.send(data);
   });
 });
 
