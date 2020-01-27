@@ -40,57 +40,84 @@
         <a class="nav-link" href="booklist.html">Booklist</a>
       </li>
     </ul>
+    
+<body>
 
-    <div class="row">
-      <div class="column">
-        <div class="card ml-5" id="cardA">
-          <div class="card-body">
-            <h5 class="card-title">Name</h5>
-            <h6 class="card-author">City</h6>
-            <p class="card-text">
-              Short description of the user. Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Eos ipsa facilis fuga, nam possimus
-              dolore maiores tempora! Quaerat praesentium, perferendis assumenda
-              voluptas?
-            </p>
-          </div>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="dashboard.html">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="profile-set-up.html">Profile Set Up</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav4" href="sign-up.html">Sign In</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="profile.html">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="booklist.html">Booklist</a>
+    </li>
+  </ul>
+
+  <div class="row" id="profileRow">
+    <div class="container12">
+      <div class="cardContainer8">
+        <div class="card-header">
+          <h4 class="card-header-text">User Name</h4>
+        </div>
+
+        <div class="main-content">
+          <img src="./images/IMG_9446.png" width="100" height="100" alt="portfolio-pic" class="float-img">
+        </div>
+
+        <div class="card-text">
+          <p id="p2">
+            journey in 2017 the day my wife told me we were having a baby. Since 2017 I have been teaching
+            myself how to code. Of course once our daughter was born coding took a backseat to the the full time.
+          </p>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="column">
-        <ul class="list-group" id="userInventory">
-          <li class="list-group-item active">My Book Inventory</li>
-          <li class="list-group-item">Rich Dad Poor Dad</li>
-          <li class="list-group-item">World War 2</li>
-          <li class="list-group-item">Angels and Demons</li>
-          <li class="list-group-item">The Shinning</li>
-        </ul>
-      </div>
-      <div class="column">
-        <ul class="list-group" id="userPending">
-          <li class="list-group-item active">Book Sawp Pending</li>
-          <li class="list-group-item">Game of Thrones</li>
-          <li class="list-group-item"></li>
-        </ul>
-        <br />
-        <ul class="list-group" id="userWishlist">
-          <li class="list-group-item active">My Wishlist</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Morbi leo risus</li>
-          <li class="list-group-item">Porta ac consectetur ac</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-      </div>
+
+  <div class="row" id="bookRow">
+    <div class="column">
+      <ul class="list-group" id="userInventory">
+        <li class="list-group-item" id="titleInventory">My Book Inventory</li>
+        <li class="list-group-item">Rich Dad Poor Dad</li>
+        <li class="list-group-item">World War 2</li>
+        <li class="list-group-item">Angels and Demons</li>
+        <li class="list-group-item">The Shinning</li>
+      </ul>
     </div>
+    <div class="column">
+      <ul class="list-group" id="userPending">
+        <li class="list-group-item" id="titlePending">Book Sawp Pending</li>
+        <li class="list-group-item">Game of Thrones</li>
+        <li class="list-group-item">Morbi leo risus</li>
 
-    <footer>
-      <img src="./images/GitHub-Mark-32px.png" alt="github logo" />
-      <a class="github" href="https://github.com/SarahJoline/book-swap-app"
-        >GitHub</a
-      >
-    </footer>
+      </ul>
+      <br>
+      <ul class="list-group" id="userWishlist">
+        <li class="list-group-item" id="titleWishlist">My Wishlist</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer id="profileFooter">
+    <img src="./images/GitHub-Mark-32px.png" alt="github logo">
+    <a class="github" href="https://github.com/SarahJoline/book-swap-app">GitHub</a>
+  </footer>
 
     <!-- JQuery  -->
     <script
