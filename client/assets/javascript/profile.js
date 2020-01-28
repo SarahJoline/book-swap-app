@@ -29,6 +29,7 @@ $(document).ready(function() {
         userId = id;
         console.log(id);
         window.location.href = `/dashboard/?id=${id}`;
+        localStorage.setItem("id", id);
       }
     });
   });

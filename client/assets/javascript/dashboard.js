@@ -1,7 +1,10 @@
 $("document").ready(function() {
+  console.log(JSON.stringify(window.location.search));
   const urlParams = new URLSearchParams(window.location.search);
 
-  const id = urlParams.get("id");
+  // const id = urlParams.get("id");
+  const id = localStorage.getItem("id");
+  console.log(id);
 
   const title = urlParams.get("title");
   const author = urlParams.get("author");

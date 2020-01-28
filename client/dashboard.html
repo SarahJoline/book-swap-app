@@ -1,75 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Gelasio&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
+    <title>Dashboard</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/dashboard.css">
-  <title>Dashboard</title>
-</head>
+  <body>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="dashboard.html">Find Books!</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav4" href="sign-up.html">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="profile.html">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="booklist.html">Booklist</a>
+      </li>
+    </ul>
 
-<body>
+    <div class="jumbotron" id="box3">
+      <h3>Dashboard</h3>
 
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" href="index.html">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="dashboard.html">Find Books!</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link nav4" href="sign-up.html">Sign Up</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="profile.html">Profile</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="booklist.html">Booklist</a>
-    </li>
-  </ul>
+      <div class="input-group" id="dashbox">
+        <input
+          type="text"
+          class="form-control"
+          id="userInput"
+          placeholder="Enter book title or author here"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-dark" type="button" id="searchBtn">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <div id="myWishlist"></div>
+    </div>
 
-
-  <div class="jumbotron" id="box3">
-
-    <h3>Dashboard</h3>
-
-    <div class="input-group" id="dashbox">
-      <input type="text" class="form-control" id="userInput" placeholder="Enter book title or author here">
-      <div class="input-group-append">
-        <button class="btn btn-dark" type="button" id="searchBtn"><i class="fa fa-search"></i></button>
+    <div class="row" id="bookRow">
+      <div class="column">
+        <ul class="list-group" id="userInventory">
+          <li class="list-group-item" id="titleInventory">Books Near Me</li>
+          <li class="list-group-item">Rich Dad Poor Dad</li>
+          <li class="list-group-item">World War 2</li>
+          <li class="list-group-item">Angels and Demons</li>
+          <li class="list-group-item">The Shinning</li>
+        </ul>
+      </div>
+      <div class="column2">
+        <ul class="list-group" id="userWishlist">
+          <li class="list-group-item" id="titleWishlist">Book Search</li>
+          <li class="list-group-item" id="myWishlist"></li>
+        </ul>
       </div>
     </div>
-    <!-- <div id="myWishlist"></div> -->
-  </div>
 
-  <div class="row" id="bookRow">
-    <div class="column">
-      <ul class="list-group" id="userInventory">
-        <li class="list-group-item" id="titleInventory">Books Near Me</li>
-        <li class="list-group-item">Rich Dad Poor Dad</li>
-        <li class="list-group-item">World War 2</li>
-        <li class="list-group-item">Angels and Demons</li>
-        <li class="list-group-item">The Shinning</li>
-      </ul>
-    </div>
-    <div class="column2">
-      <ul class="list-group" id="userWishlist">
-        <li class="list-group-item" id="titleWishlist">Book Search</li>
-        <li class="list-group-item" id="myWishlist"></li>
-      </ul>
-    </div> -->
-  </div>
-
-
-
-
-
-  <!-- <div class="row" id="bookRow">
+    <!-- <div class="row" id="bookRow">
     <div class="column">
       <ul class="list-group" id="userInventory">
         <li class="list-group-item" id="titleInventory">Books Near Me</li>
@@ -80,19 +89,20 @@
       </ul>
     </div> -->
 
+    <footer>
+      <img src="./images/GitHub-Mark-32px.png" alt="github logo" />
+      <a class="github" href="https://github.com/SarahJoline/book-swap-app"
+        >GitHub</a
+      >
+    </footer>
 
-
-  <footer>
-    <img src="./images/GitHub-Mark-32px.png" alt="github logo">
-    <a class="github" href="https://github.com/SarahJoline/book-swap-app">GitHub</a>
-  </footer>
-
-
-  <!-- JQuery  -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <!-- Javascript -->
-  <script src="/assets/javascript/dashboard.js"></script>
-</body>
-
+    <!-- JQuery  -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Javascript -->
+    <script src="/assets/javascript/dashboard.js"></script>
+  </body>
 </html>
