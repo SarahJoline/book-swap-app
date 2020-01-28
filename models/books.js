@@ -86,6 +86,7 @@ const WantedBooks = sequelize.define("wanted_book", {
 Profile.belongsTo(User);
 User.hasOne(Profile);
 User.hasMany(WantedBooks);
+WantedBooks.belongsTo(User);
 User.hasOne(BooksToLend);
 
 User.sync();
