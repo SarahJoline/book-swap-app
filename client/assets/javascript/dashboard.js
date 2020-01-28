@@ -7,12 +7,10 @@ $("document").ready(function () {
   const description = urlParams.get("description");
   const link = urlParams.get("link");
 
-  let bookArray = [];
-
   if (title == null || author == null) {
     console.log("there is no values for title and author");
   } else {
-    console.log(title, author, description, link);
+    console.log(title, author, description, link, id);
 
     $("#myWishlist").append(`
       <div class="card" style="width: 100%;">
@@ -20,7 +18,8 @@ $("document").ready(function () {
           <h5 class="card-title">${title}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${author}</h6>
           <p class="card-text">${description}</p>
-          <a data-title=${title} data-author=${author} data-description=${description} class="card-link" id="addToWishlist"><button>Add to List</button></a>
+          <a data-title=${title} data-author=${author} data-description=${description} class="card-link" id="addToWishlist"><button id="addToMyWishlist">Add to List</button><button id="addToMyBooks">I have this book!</button></a>
+
           <a target="blank" href=${link} class="card-link"><button>More Info</button></a>
         </div>
       </div>`);
@@ -40,36 +39,42 @@ $("document").ready(function () {
       url: `https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`,
       dataType: "JSON",
       success: result => {
-        let bookTitle = result.items[0].volumeInfo.title;
-        let bookAuthor = result.items[0].volumeInfo.authors[0];
+        let title = result.items[0].volumeInfo.title;
+        let author = result.items[0].volumeInfo.authors[0];
         let description = result.items[0].searchInfo.textSnippet;
         let link = result.items[0].volumeInfo.infoLink;
 
-        window.location.href = `/dashboard?title=${bookTitle}&author=${bookAuthor}&description=${description}&link=${link}&${id}`;
-
-        bookArray.push(result);
+        window.location.href = `/dashboard?title=${title}&author=${author}&description=${description}&link=${link}&id=${id}`;
       }
     });
   });
 
-  $("#addToWishlist").on("click", function (e) {
+  $("#addToMyWishlist").on("click", function(e) {
     e.preventDefault();
-    //bookArray.push(title, author);
-    //bookArray.push(bookTitle);
-    console.log(bookArray);
 
-    var title = bookArray.bookTitle;
-    var author = bookArray.bookAuthor;
-
+    console.log(title);
     $.ajax({
       type: "POST",
-      url: `/api/user/profile/wishlist/?id=${id}`,
+      url: `/api/user/wishlist/new/?id=${id}`,
       data: { title, author, id },
-      success: function (res) {
+      success: function(data) {
         userId = id;
-        console.log(bookArray);
-        console.log("successful post");
+        console.log(id);
       }
     });
+  });
+});
+
+$("#addToMyBooks").on("click", function(e) {
+  e.preventDefault();
+
+  $.ajax({
+    type: "POST",
+    url: `/api/user/mybooks/new/?id=${id}`,
+    data: { title, author, id },
+    success: function(data) {
+      userId = id;
+      console.log(id);
+    }
   });
 });
