@@ -73,8 +73,8 @@ router.get("/mybooks", (req, res) => {
 router.post("/user/mybooks/:id", (req, res) => {
   db.BooksToLend.create({
     userId: req.body.id,
-    bookTitle: req.body.title,
-    bookAuthor: req.body.bookAuthor
+    title: req.body.title,
+    author: req.body.author
   }).then(data => {
     res.send(data);
   });
@@ -99,8 +99,8 @@ router.get("/user/wishlist", (req, res) => {
 router.post("/user/wishlist/:id", (req, res) => {
   db.WantedBooks.create({
     userId: req.body.id,
-    bookTitle: req.body.bookTitle,
-    bookAuthor: req.body.bookAuthor
+    title: req.body.title,
+    author: req.body.author
   }).then(data => {
     res.send(data);
   });

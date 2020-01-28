@@ -1,6 +1,4 @@
 $("document").ready(function() {
-  let bookArray = [];
-
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get("id");
 
@@ -8,13 +6,11 @@ $("document").ready(function() {
   const author = urlParams.get("author");
   const description = urlParams.get("description");
   const link = urlParams.get("link");
-  bookArray.push({ title, author });
-  console.log(bookArray[0].title);
 
   if (title == null || author == null) {
     console.log("there is no values for title and author");
   } else {
-    console.log(title, author, description, link);
+    console.log(title, author, description, link, id);
 
     $("#myWishlist").append(`
       <div class="card" style="width: 18rem;">
@@ -48,7 +44,7 @@ $("document").ready(function() {
         let description = result.items[0].searchInfo.textSnippet;
         let link = result.items[0].volumeInfo.infoLink;
 
-        window.location.href = `/dashboard?title=${title}&author=${author}&description=${description}&link=${link}&${id}`;
+        window.location.href = `/dashboard?title=${title}&author=${author}&description=${description}&link=${link}&id=${id}`;
       }
     });
   });
@@ -56,13 +52,11 @@ $("document").ready(function() {
   $("#addToMyWishlist").on("click", function(e) {
     e.preventDefault();
 
-    var bookTitle = bookArray[0].title;
-    var bookAuthor = bookArray[0].author;
-
+    console.log(title);
     $.ajax({
       type: "POST",
       url: `/api/user/wishlist/new/?id=${id}`,
-      data: { bookTitle, bookAuthor, id },
+      data: { title, author, id },
       success: function(data) {
         userId = id;
         console.log(id);
@@ -74,13 +68,10 @@ $("document").ready(function() {
 $("#addToMyBooks").on("click", function(e) {
   e.preventDefault();
 
-  var bookTitle = bookArray[0].title;
-  var bookAuthor = bookArray[0].author;
-
   $.ajax({
     type: "POST",
     url: `/api/user/mybooks/new/?id=${id}`,
-    data: { bookTitle, bookAuthor, id },
+    data: { title, author, id },
     success: function(data) {
       userId = id;
       console.log(id);
