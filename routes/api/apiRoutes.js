@@ -17,7 +17,7 @@ router.get("/user", (req, res) => {
       console.log(user.dataValues);
       userArray.push(user.dataValues);
       userArray.push(user.dataValues.wanted_books);
-      userArray.push(user.dataValues.books_I_haves);
+      userArray.push(user.dataValues.books_I_have);
     });
   });
   res.json(userArray);

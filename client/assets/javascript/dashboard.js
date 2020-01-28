@@ -63,18 +63,17 @@ $("document").ready(function() {
       }
     });
   });
-});
+  $("#addToMyBooks").on("click", function(e) {
+    e.preventDefault();
 
-$("#addToMyBooks").on("click", function(e) {
-  e.preventDefault();
-
-  $.ajax({
-    type: "POST",
-    url: `/api/user/mybooks/new/?id=${id}`,
-    data: { title, author, id },
-    success: function(data) {
-      userId = id;
-      console.log(id);
-    }
+    $.ajax({
+      type: "POST",
+      url: `/api/user/mybooks/new/?id=${id}`,
+      data: { title, author, id },
+      success: function(data) {
+        userId = id;
+        console.log(id);
+      }
+    });
   });
 });

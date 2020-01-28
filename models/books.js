@@ -88,6 +88,7 @@ User.hasOne(Profile);
 User.hasMany(WantedBooks);
 WantedBooks.belongsTo(User);
 User.hasOne(BooksToLend);
+BooksToLend.belongsTo(User);
 
 User.sync();
 WantedBooks.sync();
