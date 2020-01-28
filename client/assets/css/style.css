@@ -1,7 +1,12 @@
+nav {
+    height: 10vh;
+}
+
 body {
     background: url(../images/star.jpg) no-repeat center center fixed;
     background-size: cover;
     font-family: 'Special Elite', cursive;
+    height: 80vh;
 }
 
 .container {
@@ -35,4 +40,8 @@ body {
 
 .form-control::-webkit-input-placeholder {
     color: black;
+}
+
+footer {
+    height: 10vh;
 }

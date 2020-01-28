@@ -1,129 +1,133 @@
-  body {
-    background: url(../images/star.jpg) no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Gelasio', serif;
-  }
+/* Home Page */
 
-  /* Home Page */
+body {
+  background: url(../images/star.jpg) no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Gelasio', serif;
+  height: 80vh;
+}
 
-  .container {
-    position: relative;
-    top: 17vh;
-    width: 70%;
-  }
+.container {
+  position: relative;
+  top: 17vh;
+  width: 70%;
+}
 
-  .jumbotron {
-    height: 275px;
-    background: cornsilk;
-  }
+.jumbotron {
+  height: 275px;
+  background: cornsilk;
+}
 
-  .input-group {
-    width: 70%;
-    margin-left: 15%;
-    text-align: center;
-    border-color: black;
-  }
+.input-group {
+  width: 70%;
+  margin-left: 15%;
+  text-align: center;
+  border-color: black;
+}
 
-  .display-4 {
-    text-align: center;
-  }
+.display-4 {
+  text-align: center;
+}
 
-  #city {
-    border-color: black;
-  }
+#city {
+  border-color: black;
+}
 
-  #signinBtn {
-    background-color: cornsilk;
-    border-color: cornsilk;
-    color: black;
-    margin-top: 2%;
-    margin-left: 90%;
-  }
+#signinBtn {
+  background-color: cornsilk;
+  border-color: cornsilk;
+  color: black;
+  margin-top: 2%;
+  margin-left: 90%;
+}
 
-  .nav {
-    background-color: cornsilk;
-  }
+.nav {
+  background-color: cornsilk;
+  height: 10vh;
+}
 
-  .nav-link {
-    color: black;
-  }
+.nav-link {
+  color: black;
+  margin-top: 2vh;
+  margin-left: 5vh;
+}
 
-  .nav4 {
-    position: absolute;
-    margin-left: 65%;
-  }
+.nav4 {
+  position: absolute;
+  margin-left: 70%;
+}
 
-  footer {
-    padding: 8px;
-    background-color: cornsilk;
-    margin-top: 90vh;
-    text-align: center;
-    
-    
-  }
+footer {
+  padding: 2.5vh;
+  background-color: cornsilk;
+  margin-top: 36vh;
+  text-align: center;
+  height: 10vh;
+}
 
-  .github {
-    color: black;
-  }
-
-
-
-  /* sign up page */
-  .signupJumbo {
-    padding-top: 3%;
-  }
-
-  .display-4 {
-    text-align: center;
-  }
-
-  #inputEmail,
-  #inputPassword {
-    border-color: black;
-  }
+.github {
+  color: black;
+}
 
 
-  /* profile-set-up */
-  #userProfile {
-    margin-top: -5%;
-  }
 
-  #inputFirstName,
-  #inputLastName,
-  #inputLocation {
-    border-radius: 3px;
-    border-color: black;
-    border-width: 1px;
-  }
+/* sign up page */
+.signupJumbo {
+  padding-top: 3%;
+}
+
+.display-4 {
+  text-align: center;
+}
+
+#inputEmail,
+#inputPassword {
+  border-color: black;
+}
 
 
-  /* user profile page */
-  
 
-  #profileRow {
-    margin-top: 5vh;
-    margin-left: 8%;
-  }
+/* profile-set-up */
+#userProfile {
+  margin-top: -5%;
+}
 
-  .cardContainer8 {
-    font-size: 0.80rem;
-    padding: 10px;
-    height: 28vh;
-    width: 35%;
-    background-color: cornsilk;
-    margin-bottom: 20px;
-    float: left;
-    clear: right;
-    overflow: visible;
-  }
+#inputFirstName,
+#inputLastName,
+#inputLocation {
+  border-radius: 3px;
+  border-color: black;
+  border-width: 1px;
+}
 
-  .float-img {
-    background: url(../assets/images/starfield.jpg) no-repeat center center fixed;
-    background-size: cover;
-    float: left;
-    margin-right: 10px;
-    margin-top: 10px;
-  }
+
+
+/* user profile page */
+
+#profileRow {
+  margin-top: 5vh;
+  margin-left: 8%;
+}
+
+.cardContainer8 {
+  font-size: 0.80rem;
+  padding: 10px;
+  height: 28vh;
+  width: 35%;
+  background-color: cornsilk;
+  margin-bottom: 20px;
+  float: left;
+  clear: right;
+  overflow: visible;
+}
+
+.float-img {
+  background: url(../assets/images/starfield.jpg) no-repeat center center fixed;
+  background-size: cover;
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
+}
 
 #p2 {
   clear: right;
@@ -131,16 +135,15 @@
   margin-top: 10px;
 }
 
-
 #bookRow {
   padding-top: 5vh;
 }
 
-  .column {
-    float: left;
-    width: 38%;
-    margin-left: 9%;
-  }
+.column {
+  float: left;
+  width: 38%;
+  margin-left: 9%;
+}
 
 #titleInventory {
 background-color: cornsilk;
@@ -163,7 +166,7 @@ background-color: cornsilk;
   }
 
 #profileFooter {
-  padding: 8px;
+  padding: 2.5vh;
   background-color: cornsilk;
   margin-top: 90vh;
   text-align: center;
