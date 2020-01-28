@@ -1,88 +1,38 @@
 body {
-    background: url(../images/star.jpg) no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Gelasio', serif;
-    height: 80vh;
+  background: url(../images/star.jpg) no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Gelasio', serif;
+  height: 80vh;
+
 }
-  }
 
-  .jumbotron {
-    height: 150px;
-    color: black;
-    background: cornsilk;
-    padding-bottom: 20px;
-    padding-top: 35px;
-    width: 55%;
-    margin-left: 22.5%;
-    margin-top: 3%;
-  }
+.jumbotron {
+  height: 150px;
+  color: black;
+  background: cornsilk;
+  padding-bottom: 20px;
+  padding-top: 35px;
+  width: 55%;
+  margin-left: 22.5%;
+  margin-top: 3%;
+}
 
-  .input-group {
-    width: 70%;
-    margin-left: 15%;
-    text-align: center;
-    border-color: black;
-  }
+.input-group {
+  width: 70%;
+  margin-left: 15%;
+  text-align: center;
+  border-color: black;
+}
 
-  h3 {
-    text-align: center;
-  }
+h3 {
+  text-align: center;
+}
 
-  #city {
-    border-color: black;
-  }
+#city {
+  border-color: black;
+}
 
-  #signinBtn {
-    background-color: cornsilk;
-    border-color: cornsilk;
-    color: black;
-    margin-top: 2%;
-    margin-left: 90%;
-  }
-
-  .nav {
-    background-color: cornsilk;
-  }
-
-  .nav-link {
-    color: black;
-  }
-
-  .nav4 {
-    position: absolute;
-    margin-left: 65%;
-  }
-
-  .github {
-    color: black;
-  }
-
-  #userInput {
-    border-color: black;
-  }
-
-  #dashbox {
-    margin-top: 1%;
-  }
-
-  #bookRow {
-    padding-top: 5vh;
-  }
-  
-  .column {
-    float: left;
-    width: 38%;
-    margin-left: 8%;
-  }
-
-  .column2 {
-    float: left;
-    width: 42%;
-    margin-left: 8%;
-
-  }
-  
-  #titleInventory {
+#signinBtn {
   background-color: cornsilk;
   border-color: cornsilk;
   color: black;
@@ -125,20 +75,27 @@ body {
 .column {
   float: left;
   width: 38%;
-  margin-left: 9%;
+  margin-left: 8%;
+}
+
+.column2 {
+  float: left;
+  width: 42%;
+  margin-left: 8%;
+
 }
 
 #titleInventory {
-  background-color: cornsilk;
+background-color: cornsilk;
 }
-  
+
 #titleWishlist {
   background-color: cornsilk;
 }
 
 #userWishlist {
   margin-right: 10%;
-}
+  }
 
 footer {
   padding: 2.5vh;
