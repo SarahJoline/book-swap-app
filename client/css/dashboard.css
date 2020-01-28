@@ -67,11 +67,18 @@ body {
     padding-top: 5vh;
   }
   
-    .column {
-      float: left;
-      width: 38%;
-      margin-left: 9%;
-    }
+  .column {
+    float: left;
+    width: 38%;
+    margin-left: 8%;
+  }
+
+  .column2 {
+    float: left;
+    width: 42%;
+    margin-left: 8%;
+
+  }
   
   #titleInventory {
   background-color: cornsilk;

@@ -1,4 +1,4 @@
-$("document").ready(function() {
+$("document").ready(function () {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get("id");
 
@@ -15,7 +15,7 @@ $("document").ready(function() {
     console.log(title, author, description, link);
 
     $("#myWishlist").append(`
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 100%;">
         <div class="card-body">
           <h5 class="card-title">${title}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${author}</h6>
@@ -26,7 +26,7 @@ $("document").ready(function() {
       </div>`);
   }
 
-  $("#searchBtn").on("click", function(e) {
+  $("#searchBtn").on("click", function (e) {
     e.preventDefault();
 
     var bookName = $("#userInput").val();
@@ -52,7 +52,7 @@ $("document").ready(function() {
     });
   });
 
-  $("#addToWishlist").on("click", function(e) {
+  $("#addToWishlist").on("click", function (e) {
     e.preventDefault();
     //bookArray.push(title, author);
     //bookArray.push(bookTitle);
@@ -65,7 +65,7 @@ $("document").ready(function() {
       type: "POST",
       url: `/api/user/profile/wishlist/?id=${id}`,
       data: { title, author, id },
-      success: function(res) {
+      success: function (res) {
         userId = id;
         console.log(bookArray);
         console.log("successful post");
