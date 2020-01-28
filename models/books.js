@@ -1,6 +1,5 @@
 const Sequelize = require("sequelize");
 const sequelize = require("../config/connection");
-
 const User = sequelize.define("user", {
   id: {
     type: Sequelize.INTEGER,
@@ -23,13 +22,11 @@ const User = sequelize.define("user", {
     }
   }
 });
-
 const Profile = sequelize.define("profile", {
   photo: {
     allowNull: true,
     type: Sequelize.STRING
   },
-
   firstName: {
     allowNull: false,
     type: Sequelize.STRING,
@@ -37,7 +34,6 @@ const Profile = sequelize.define("profile", {
       len: [1, 100]
     }
   },
-
   lastName: {
     allowNull: false,
     type: Sequelize.STRING,
@@ -45,13 +41,11 @@ const Profile = sequelize.define("profile", {
       len: [1, 100]
     }
   },
-
   location: {
     allowNull: false,
     type: Sequelize.STRING
   }
 });
-
 const BooksToLend = sequelize.define("books_I_have", {
   title: {
     type: Sequelize.STRING,
@@ -67,7 +61,6 @@ const BooksToLend = sequelize.define("books_I_have", {
   },
   available: { type: Sequelize.BOOLEAN, defaultValue: true }
 });
-
 const WantedBooks = sequelize.define("wanted_book", {
   title: {
     type: Sequelize.STRING,

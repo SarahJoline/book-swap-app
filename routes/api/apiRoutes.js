@@ -12,11 +12,10 @@ router.get("/user", (req, res) => {
     include: [db.Profile, db.WantedBooks, db.BooksToLend]
   }).then(data => {
     console.log(data);
-
     data.forEach(user => {
       console.log(user.dataValues);
       userArray.push(user.dataValues);
-      userArray.push(user.dataValues.wanted_books);
+      userArray.push(user.dataValues.wanted_book);
       userArray.push(user.dataValues.books_I_have);
     });
   });

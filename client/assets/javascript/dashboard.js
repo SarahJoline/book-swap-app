@@ -1,5 +1,6 @@
-$("document").ready(function () {
+$("document").ready(function() {
   const urlParams = new URLSearchParams(window.location.search);
+
   const id = urlParams.get("id");
 
   const title = urlParams.get("title");
@@ -11,29 +12,24 @@ $("document").ready(function () {
     console.log("there is no values for title and author");
   } else {
     console.log(title, author, description, link, id);
-
     $("#myWishlist").append(`
-      <div class="card" style="width: 100%;">
+      <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">${title}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${author}</h6>
           <p class="card-text">${description}</p>
           <a data-title=${title} data-author=${author} data-description=${description} class="card-link" id="addToWishlist"><button id="addToMyWishlist">Add to List</button><button id="addToMyBooks">I have this book!</button></a>
-
           <a target="blank" href=${link} class="card-link"><button>More Info</button></a>
         </div>
       </div>`);
   }
-
-  $("#searchBtn").on("click", function (e) {
+  $("#searchBtn").on("click", function(e) {
     e.preventDefault();
-
     var bookName = $("#userInput").val();
     var bookSearch = bookName
       .split(" ")
       .join("+")
       .toLowerCase();
-
     $.ajax({
       method: "GET",
       url: `https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`,
@@ -48,12 +44,10 @@ $("document").ready(function () {
       }
     });
   });
-
   if (title == null || author == null) {
     console.log("there is no values for title and author");
   } else {
     console.log(title, author, description, link, id);
-
     $("#myWishlist").append(`
       <div class="card" style="width: 18rem;">
         <div class="card-body">
@@ -61,14 +55,13 @@ $("document").ready(function () {
           <h6 class="card-subtitle mb-2 text-muted">${author}</h6>
           <p class="card-text">${description}</p>
           <a data-title=${title} data-author=${author} data-description=${description} class="card-link" id="addToWishlist"><button id="addToMyWishlist">Add to List</button><button id="addToMyBooks">I have this book!</button></a>
-
           <a target="blank" href=${link} class="card-link"><button>More Info</button></a>
         </div>
       </div>`);
   }
-
   $("#addToMyWishlist").on("click", function(e) {
     e.preventDefault();
+
     console.log(id);
     console.log(title);
     $.ajax({
@@ -84,7 +77,6 @@ $("document").ready(function () {
 
   $("#addToMyBooks").on("click", function(e) {
     e.preventDefault();
-
     $.ajax({
       type: "POST",
       url: `/api/user/mybooks/new/?id=${id}`,
